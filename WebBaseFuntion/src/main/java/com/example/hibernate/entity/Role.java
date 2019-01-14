@@ -26,6 +26,7 @@ public class Role {
 		super();
 	}
 
+	
 
 	public Role(Long role_id, String name, String desc) {
 		super();

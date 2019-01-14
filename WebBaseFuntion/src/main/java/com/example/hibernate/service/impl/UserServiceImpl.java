@@ -6,33 +6,39 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.hibernate.service.UserService;
+import com.example.hibernate.service.RoleService;
 import com.example.hibernate.entity.Role;
 import com.example.hibernate.repository.UserRepository;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements RoleService {
 
 	@Autowired
 	private UserRepository userRepository;
 	
 	@Override
-	public List<Role> getAllUser() {
-		return (List<Role>) userRepository.findAll() ;
+	public List<Role> getAllRole() {
+		return (List<Role>) userRepository.findAll();
 	}
 
 	@Override
-	public void saveUser(Role object) {
+	public void saveRole(Role object) {
 		userRepository.save(object);
 	}
 
 	@Override
-	public Optional<Role> findUserById(Long id) {
+	public Optional<Role> findRoleById(Long id) {
 		return userRepository.findById(id);
 	}
 
 	@Override
-	public void deleteUser(Long id) {
+	public void deleteRole(Long id) {
 		userRepository.deleteById(id);
 	}
+
+	public List<Role> findByFullNameLike(String name) {
+		List<Role> list = userRepository.findByFullNameLike(name);
+		return list;
+	}
+	
 }

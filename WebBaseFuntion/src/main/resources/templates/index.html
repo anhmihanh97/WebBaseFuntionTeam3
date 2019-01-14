@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Role List</title>
-    <link type="text/css" rel="stylesheet" th:href ="@{/css/bootstrap.min.css}"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Role List</title>
+<link type="text/css" rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
-    <div class="col-3"></div>
-    <div class="container col-6">
-    <h1>List Role</h1>
-        <table class="table table-active">
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Action</th>
-            </tr>
-            <tr th:each="role : ${roles}">
-                <td th:text="${role.name}"></td>
-                <td th:text="${role.desc}"></td>
-                <td>
-                    <a th:href="@{/edit?role_id={role_id}(role_id=${role.role_id})}" class="btn btn-primary">Edit</a>
-                    <a th:href="@{/delete?role_id={role_id}(role_id=${role.role_id})}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        </table>
-        <a href ="/add" class="btn btn-success">Add Role</a>
+	<div class="col-3"></div>
+	<div class="container col-6">
+		<h1>List Role</h1>
 
-    </div>
+		<table class="table table-active">
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Action</th>
+				<th>
+					<form class="form-inline pull-right" action="/search" method="GET">
+						<div class="form-group">
+							<input type="text" class="form-control" name="text_search"
+								placeholder="Type role name..." />
+						</div>
+						<button type="submit" class="btn btn-primary">Search</button>
+					</form>
+				</th>
+			</tr>
+			<tr th:each="role : ${roles}">
+				<td th:text="${role.name}"></td>
+				<td th:text="${role.desc}"></td>
+				<td><a
+					th:href="@{/edit?role_id={role_id}(role_id=${role.role_id})}"
+					class="btn btn-primary">Edit</a> <a
+					th:href="@{/delete?role_id={role_id}(role_id=${role.role_id})}"
+					class="btn btn-danger">Delete</a></td>
+
+			</tr>
+		</table>
+		<a href="/add" class="btn btn-success">Add Role</a>
+
+	</div>
 </body>
 </html>
