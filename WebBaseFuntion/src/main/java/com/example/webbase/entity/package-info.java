@@ -5,4 +5,4 @@
  * @author Administrator
  *
  */
-package com.example.demo.controller;
+package com.example.webbase.entity;
