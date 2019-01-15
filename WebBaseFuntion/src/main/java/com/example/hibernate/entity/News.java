@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,8 +14,9 @@ import javax.persistence.Table;
 public class News {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = "news_id")
-	private Long news_id;
+	private int news_id;
 	
 	@Column (name = "url")
 	private String url;
@@ -54,7 +57,7 @@ public class News {
 	}
 
 
-	public News(Long news_id, String url, String title, String desc, String content, String status, String is_hot,
+	public News(int news_id, String url, String title, String desc, String content, String status, String is_hot,
 			Long user_id, Long approver_id, Date created_at, Date updated_at, Date approved_at) {
 		super();
 		this.news_id = news_id;
@@ -72,12 +75,12 @@ public class News {
 	}
 
 
-	public Long getNews_id() {
+	public int getNews_id() {
 		return news_id;
 	}
 
 
-	public void setNews_id(Long news_id) {
+	public void setNews_id(int news_id) {
 		this.news_id = news_id;
 	}
 
@@ -122,7 +125,7 @@ public class News {
 	}
 
 
-	public String isStatus() {
+	public String getStatus() {
 		return status;
 	}
 
@@ -132,7 +135,7 @@ public class News {
 	}
 
 
-	public String isIs_hot() {
+	public String getIs_hot() {
 		return is_hot;
 	}
 
@@ -190,5 +193,6 @@ public class News {
 	public void setApproved_at(Date approved_at) {
 		this.approved_at = approved_at;
 	}
+
 	
 }

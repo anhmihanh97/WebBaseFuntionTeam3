@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+
+	<div class="container main-content list">
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">×</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+		<div class="row">
+			<a th:href="@{/news/create}" class="btn btn-success pull-left">
+				<span class="glyphicon glyphicon-plus"></span> Add news
+			</a>
+			<form class="form-inline pull-right" action="#"
+				th:action="@{/news/search}" method="GET">
+				<div class="form-group">
+					<input type="text" class="form-control" name="s"
+						placeholder="Type employee name..." />
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+		<th:block th:if="${#lists.isEmpty(news)}">
+			<h3>No employee</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(news)}">
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Description</th>
+							<th>Content</th>
+							<th>Status</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="contact,iterStat : ${news}">
+							<td th:text="${iterStat.title}"></td>
+							<td th:text="${contact.desc}"></td>
+							<td th:text="${contact.content}"></td>
+							<td th:text="${contact.status}"></td>
+							<td><a th:href="@{/news/{news_id}/edit(news_id=${contact.news_id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/news/{news_id}/delete(news_id=${contact.news_id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
