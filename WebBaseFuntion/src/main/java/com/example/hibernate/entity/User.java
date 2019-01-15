@@ -1,58 +1,67 @@
 package com.example.hibernate.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "user")
-public class User {
+@Table(name="user")
+public class User implements Serializable{
 
 	@Id
 	@Column (name = "user_id")
-	private Long user_id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int userId;
+	
 	@Column (name = "full_name")
-	private String full_name;
+	private String fullName;
+	
 	@Column (name = "email")
 	private String email;
+	
 	@Column (name = "mobile")
-	private int mobile;
+	private String mobile;
+	
 	@Column (name = "password")
 	private String password;
+	
 	@Column (name = "status")
-	private boolean status;
+	private String status;
 	
 	public User() {
 		super();
 	}
-	
-	public User(Long user_id, String full_name, String email, int mobile, String password, boolean status) {
+
+	public User(int userId, String fullName, String email, String mobile, String password, String status) {
 		super();
-		this.user_id = user_id;
-		this.full_name = full_name;
+		this.userId = userId;
+		this.fullName = fullName;
 		this.email = email;
 		this.mobile = mobile;
 		this.password = password;
 		this.status = status;
 	}
 
-	public Long getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getFull_name() {
-		return full_name;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
-
 
 	public String getEmail() {
 		return email;
@@ -62,15 +71,13 @@ public class User {
 		this.email = email;
 	}
 
-
-	public int getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(int mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-
 
 	public String getPassword() {
 		return password;
@@ -80,13 +87,15 @@ public class User {
 		this.password = password;
 	}
 
-
-	public boolean isStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	
+
 	
 }

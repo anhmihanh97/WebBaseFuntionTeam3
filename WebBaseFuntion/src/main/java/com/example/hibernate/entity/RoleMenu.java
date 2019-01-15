@@ -1,57 +1,50 @@
-package com.example.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+  package com.example.hibernate.entity;
 
-@Entity
-@Table (name = "role_menu")
-public class RoleMenu {
+  import javax.persistence.Column; import javax.persistence.Entity; import
+  javax.persistence.Id; import javax.persistence.Table;
 
-	@Id
-	@Column (name = "role_id")
-	private Long role_id;
-	
-	@Column (name = "menu_id")
-	private Long menu_id;
-	
-	@Column (name = "status")
-	private boolean status;
+  @Entity
+  @Table (name = "tbl_role_menu")
+  public class RoleMenu {
 
-	public RoleMenu() {
-		super();
-	}
+  @Id
 
-	public RoleMenu(Long role_id, Long menu_id, boolean status) {
-		super();
-		this.role_id = role_id;
-		this.menu_id = menu_id;
-		this.status = status;
-	}
+  @Column (name = "role_id") private Long roleId;
 
-	public Long getRole_id() {
-		return role_id;
-	}
+  @Column (name = "menu_id") private Long menuId;
 
-	public void setRole_id(Long role_id) {
-		this.role_id = role_id;
-	}
+  @Column (name = "status") private int status;
 
-	public Long getMenu_id() {
-		return menu_id;
-	}
+  public RoleMenu() { super(); }
 
-	public void setMenu_id(Long menu_id) {
-		this.menu_id = menu_id;
-	}
+      public RoleMenu(Long roleId, Long menuId, int status) {
+          this.roleId = roleId;
+          this.menuId = menuId;
+          this.status = status;
+      }
 
-	public boolean isStatus() {
-		return status;
-	}
+      public Long getRoleId() {
+          return roleId;
+      }
 
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-	
-}
+      public void setRoleId(Long roleId) {
+          this.roleId = roleId;
+      }
+
+      public Long getMenuId() {
+          return menuId;
+      }
+
+      public void setMenuId(Long menuId) {
+          this.menuId = menuId;
+      }
+
+      public int getStatus() {
+          return status;
+      }
+
+      public void setStatus(int status) {
+          this.status = status;
+      }
+  }
