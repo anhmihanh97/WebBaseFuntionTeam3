@@ -38,7 +38,7 @@ public class UserController {
 //	}
 	
 	
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String index(Model model) {
 		List<Role> roles = roleService.getAllRole();
 		model.addAttribute("roles", roles);
@@ -73,8 +73,8 @@ public class UserController {
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(@RequestParam("text_search") String name, Model model) {
-		List<Role> roles = serviceImpl.findByFullNameLike(name);
+		List<Role> roles = serviceImpl.findByTitleContaining(name);
 		model.addAttribute("roles", roles);
-		return "search";
+		return "index";
 	}
 }

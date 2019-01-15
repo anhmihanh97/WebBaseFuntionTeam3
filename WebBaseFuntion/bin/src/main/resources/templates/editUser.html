@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link type="text/css" rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}" />
+<title>Edit User</title>
+</head>
+<body>
+	<div class="col-3"></div>
+	<div class="container col-6">
+		<h1>Edit User</h1>
+
+		<form th:object="${role}" th:action="@{save}" action="#" method="post">
+			<input type="hidden" th:field="*{role_id}">
+			<div>
+				<label th:text="Name" th:for="name"></label> <input type="text"
+					th:field="*{name}" class="form-control" />
+			</div>
+			<div style="clear: both; display: block; height: 10px"></div>
+			
+			<div>
+				<label th:text="Description" th:for="description"></label> <input type="text"
+					th:field="*{desc}" class="form-control" />
+			</div>
+			<div style="clear: both; display: block; height: 10px"></div>
+			<input type="submit" class="btn btn-success" value="Save" />
+
+		</form>
+	</div>
+
+</body>
+</html>

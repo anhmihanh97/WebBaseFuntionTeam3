@@ -36,8 +36,8 @@ public class UserServiceImpl implements RoleService {
 		userRepository.deleteById(id);
 	}
 
-	public List<Role> findByFullNameLike(String name) {
-		List<Role> list = userRepository.findByFullNameLike(name);
+	public List<Role> findByTitleContaining(String name) {
+		List<Role> list = userRepository.findByNameContaining(name);
 		return list;
 	}
 	
