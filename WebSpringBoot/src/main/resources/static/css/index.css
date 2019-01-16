@@ -1,0 +1,202 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.wapper {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    width: 1100px;
+    height: auto;
+    line-height: 16px;
+    margin: 0 auto;
+}
+.container .float-left {
+    float: left;
+}
+.container .logo-left {
+    margin-left: 20%;
+}
+.container .logo-left img {
+    width: 100px;
+    height: auto;
+}
+.container .content-right {
+    margin-left: 14%;
+    line-height: 3em;
+}
+.container .container_content {
+    margin-left: -5em;
+    position: relative;
+}
+.container .container_content .container_login {
+    position: absolute;
+    top: 2em;
+    right: 3em;
+}
+.container .container_content .container_login .container_login_ab {
+    position: absolute;
+    top: 11em;
+    right: 2em;
+}
+input[type=text] {
+    width: 230px;
+    height: 30px;
+    border: 1px solid #D7D7D7;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+input[type=email] {
+    width: 230px;
+    height: 30px;
+    border: 1px solid #D7D7D7;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+select {
+    width: 234px;
+    height: 30px;
+    border: 1px solid #D7D7D7;
+    margin-bottom: 3px;
+    border-radius: 3px; 
+}
+input[type=submit] {
+    width: 230px;
+    height: 40px;
+    border: 1px solid #D7D7D7;
+    background-color: #83C75D;
+    margin-bottom: 3px;
+    border-radius: 3px;
+}
+input[type=submit]:hover {
+    background-color: #5BBD2B;
+    color: yellow;
+}
+.container-top_20 {
+    margin-top: 5em;
+}
+.container .mauxanh,h3 {
+    text-align: center;
+    color: #5BBD2B;
+}
+.container .mauxanh {
+    margin-bottom: 3em;
+}
+ .column {
+    overflow: hidden;
+    width: 24%;
+}
+.container-top_20 .container .column h3,p {
+    text-align: center;
+    padding: 2px;
+    margin-top: 10px;
+}
+.container-top_20 .container .column h3 {
+    margin-top: 2em;
+}
+.container-top_20 .container .column .box {
+    background-color: #F09C42;
+    padding-left: 4em;
+    margin-right: 8px;
+    position: relative;
+}
+.container-top_20 .container .column .box .div {
+    position: absolute;
+    bottom: -1=20px;
+    right: 50%;
+    background-color: #fff;
+    border-top: 10px solid  #F09C42;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    width: 0; height:0;
+}
+.container-top_20 .container .column .box img {
+    padding: 1.5em;
+}
+.textalign {
+ margin-left: 30em;
+ padding-top: 60px;
+ padding-bottom: 50px;
+}
+.mauxam {
+    background-color: #C2C2C2;
+}
+.mauxam .over {
+    overflow: hidden;
+}
+.mauxam .container .column6 {
+    width: 16%;
+    margin-bottom: 
+}
+.mauxam .container .column6:first-child {
+    margin-left: 27px;
+}
+.margintop {
+    padding-top: 2em;
+    font-size: 1.5em;
+    padding-bottom: 2em;
+    overflow: hidden;
+}
+.nenvang {
+    background-color: #CE9D3E;
+    height: 610px;
+}
+.nenvang .mauvang {
+    background-image: url(./img/benefit-2-bg.jpg);
+    height: 610px;
+    background-repeat: no-repeat;
+}
+.mautrang {
+    color: #fff;
+    text-align: center;
+}
+.object-right {
+    margin-top: 7em;
+}
+.section3 {
+    height: 645px;
+}
+.column7 {
+    width: 14%;
+}
+.slider-xanh {
+    background-color: #5BBD2B;
+}
+.slider-xanh .slider img {
+    margin-left: 7em;
+}
+.mt-2 {
+    margin-left: 2em;
+}
+footer {
+    position: relative;
+}
+.footer-top {
+    background-color: #CE9D3E;
+    height: 150px;
+}
+.footer-top h3 {
+    padding: 10px;
+}
+.footer-bot {
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    background-color: #5BBD2B;
+    line-height: 55px;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0em;
+    width: 100%;
+} .logo-top {
+    position: absolute;
+    right: 2em;
+    width: 50px;
+}
+clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
