@@ -2,6 +2,7 @@ package exaple.spring.people.service;
 
 import java.util.List;
 
+import exaple.spring.people.entity.User;
 import exaple.spring.people.model.UserDTO;
 
 
@@ -62,4 +63,6 @@ public interface UserService {
 	 * @return
 	 */
 	public UserDTO getAllUser(int id);
+	
+
 }

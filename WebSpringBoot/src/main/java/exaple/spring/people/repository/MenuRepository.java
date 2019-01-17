@@ -6,7 +6,7 @@ import exaple.spring.people.entity.Menu;
 
 
 public interface MenuRepository {
-public List<Menu> getALLMenus() ;
+	public List<Menu> getALLMenus() ;
 	
 	/**
 	 * Create by: nmanh - CMC

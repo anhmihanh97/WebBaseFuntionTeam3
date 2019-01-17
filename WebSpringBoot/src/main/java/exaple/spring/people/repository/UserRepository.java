@@ -49,4 +49,6 @@ public interface UserRepository{
 	 * @return
 	 */
 	public User getAllUser(int id);
+	
+	
 }

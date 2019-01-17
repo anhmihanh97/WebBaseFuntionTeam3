@@ -117,4 +117,5 @@ public class UserServiceimpl implements UserService{
 		userDTO.setStatus(u.getStatus());
 		return userDTO;
 	}
+
 }

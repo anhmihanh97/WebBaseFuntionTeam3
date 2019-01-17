@@ -100,7 +100,6 @@ public class MenuServiceimpl implements MenuService{
 			menu.setFunction(menuDTOO.getFunction());
 			menuRepository.updateMenu(menu);;
 		}
-		
 	}
 
 	/**
