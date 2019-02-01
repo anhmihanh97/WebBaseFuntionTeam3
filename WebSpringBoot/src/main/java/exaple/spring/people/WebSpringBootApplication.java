@@ -7,12 +7,21 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
+import org.apache.log4j.Logger;
 @SpringBootApplication(scanBasePackages={"exaple.spring.people"})
 @EntityScan(basePackages= {"exaple.spring.people.entity"})
 public class WebSpringBootApplication /* extends WebSecurityConfigurerAdapter */ {
 
+	// log4j
+static Logger log = Logger.getLogger(WebSpringBootApplication.class);
+	
 	public static void main(String[] args) {
+		
+	    log.info("check infor");
+	    log.debug("check debug");
+	    log.error("check error");
+		
+		
 		SpringApplication.run(WebSpringBootApplication.class, args);
 	}
 	
